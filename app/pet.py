@@ -142,6 +142,7 @@ class DesktopPet(QLabel):
 
     def mouseDoubleClickEvent(self, event):
         if event.button() == Qt.LeftButton:
+            self.click_recovery.stop()
             current_index = GIF_ORDER.index(self.current_gif)
             next_index = (current_index + 1) % len(GIF_ORDER)
             self.switch_gif(GIF_ORDER[next_index])
